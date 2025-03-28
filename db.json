@@ -1,0 +1,490 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser",
+      "email": "test@example.com",
+      "password": "password123"
+    },
+    {
+      "id": 1742875129355,
+      "firstName": "tran",
+      "lastName": "hoan",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": " Tim Tszyu Vintage Tee",
+      "price": 39.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT670A_DWWHT_1.jpg?v=1742163874"
+    },
+    {
+      "id": "2",
+      "name": "Tim Tszyu Vintage Hoodie",
+      "price": 69.99,
+      "category": "apparel",
+      "type": "hoodies",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT671A_DWBLK_1.jpg?v=1742163787"
+    },
+    {
+      "id": "3",
+      "name": "Tim Tszyu Football Jersey ",
+      "price": 85,
+      "category": "accessories",
+      "type": "jerseys",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT672A_DWBLK_1.jpg?v=1742163852"
+    },
+    {
+      "id": "4",
+      "name": "Coney Island Core Hoodie",
+      "price": 74.99,
+      "category": "protection",
+      "type": "hoodies",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT651A_DWBLK_01.jpg?v=1733878365"
+    },
+    {
+      "id": "5",
+      "name": "Coney Island Watercolour Short Sleeve Graphic Tee - Black ",
+      "price": 59.99,
+      "category": "protection",
+      "type": "shorts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT650A_DWBLK_01.jpg?v=1733878162"
+    },
+    {
+      "id": "6",
+      "name": "Lifters Terry Shorts - College Marle ",
+      "description": "Comfortable and durable boxing shorts for optimal performance.",
+      "price": 34.99,
+      "category": "apparel",
+      "type": "shorts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMZ277A_GREY__06.jpg?v=1736921847"
+    },
+    {
+      "id": "7",
+      "name": "Elite Speed Bag",
+      "description": "Premium speed bag for improving timing and hand-eye coordination.",
+      "price": 59.99,
+      "category": "equipment",
+      "type": "speed-bags",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEQ141446_DWBLK_01.jpg?v=1740021977"
+    },
+    {
+      "id": "8",
+      "name": "Terry Panel Hoodie - Navy/Red/Grey",
+      "description": "Comfortable hoodie for warm-ups and cool-downs.",
+      "price": 49.99,
+      "category": "apparel",
+      "type": "hoodies",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT609A_GREY_MARLE_NAVY_01.jpg?v=1721203107"
+    },
+    {
+      "id": "9",
+      "name": " Pvc Jump Rope 9'6 - Black",
+      "description": "High-quality jump rope for cardio and footwork training.",
+      "price": 24.99,
+      "category": "equipment",
+      "type": "jump-ropes",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEQ141396_Black_1_eeefad95-5419-4256-8322-e3fa38387152.jpg?v=1704842886"
+    },
+    {
+      "id": "10",
+      "name": "Mx2 Pro Micro Focus Mitts ",
+      "description": "Professional focus mitts for precision training.",
+      "price": 44.99,
+      "category": "equipment",
+      "type": "focus-mitts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEQ141365_DWRED_1_13cca838-03ce-4b23-ab32-99744ab0ee2b.jpg?v=1704843719"
+    },
+    {
+      "id": "11",
+      "name": "Lifters Ringer Tee - White",
+      "description": "Lightweight, breathable t-shirt for intense training sessions.",
+      "price": 29.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT661A_WHITE__01.jpg?v=1728954665"
+    },
+    {
+      "id": "12",
+      "name": "Pro Double-End Bag",
+      "description": "Double-end bag for developing timing and accuracy.",
+      "price": 69.99,
+      "category": "equipment",
+      "type": "double-end bags",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/image_39.jpg?v=1726622346"
+    },
+    {
+      "id": "13",
+      "name": "Elite 180 inch Hand Wraps",
+      "price": 29.99,
+      "category": "equipment",
+      "type": "hand-wraps",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEQ141417_DWWHT_01.jpg?v=17400219095"
+    },
+    {
+      "id": "14",
+      "name": " Powerlock2 Training Glove 12oz ",
+      "price": 99.99,
+      "category": "gloves",
+      "type": "training",
+      "size": "12oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEQ141236_DWGRN_01.jpg?v=1740022207"
+    },
+    {
+      "id": "15",
+      "name": "Pro Powerlock2 Training Gloves ",
+      "price": 199.99,
+      "category": "gloves",
+      "type": "training",
+      "size": "12oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/141466ProPowerlock2TrainingGlove_RedBlack_1.jpg?v=1737607024"
+    },
+    {
+      "id": "16",
+      "name": "Pro Powerlock2 Training Gloves  ",
+      "price": 199.99,
+      "category": "gloves",
+      "type": "training",
+      "size": "12oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/141466ProPowerlock2TrainingGlove_BlackGrey_1.jpg?v=1737607005"
+    },
+    {
+      "id": "17",
+      "name": "1910 Boxing Gloves 14oz",
+      "price": 59.99,
+      "category": "gloves",
+      "type": "sparring",
+      "size": "14oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEQ141453_DWRED_01.jpg?v=1740040787"
+    },
+    {
+      "id": "18",
+      "name": "Elite Pro Fight Gloves 10oz",
+      "price": 399.99,
+      "category": "gloves",
+      "type": "sparring",
+      "size": "10oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/141090_91_EliteProFightGloves_Blue_278dbe27-1a27-427c-9ce9-de09dc0e2dfb.jpg?v=1737608190"
+    },
+    {
+      "id": "19",
+      "name": " Pro Powerlock2 Fight Gloves",
+      "price": 299.99,
+      "category": "gloves",
+      "type": "sparring",
+      "size": "10oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/141467ProPowerlock2FightGloveLaces_BlackGrey_1.jpg?v=1737606861"
+    },
+    {
+      "id": "20",
+      "name": " 1910 Boxing Gloves 16oz",
+      "price": 59.99,
+      "category": "gloves",
+      "type": "sparring",
+      "size": "16oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEQ141453_DWRED_01_7a4060e5-00a4-4514-831b-1efe4a272a61.jpg?v=1740040806"
+    },
+    {
+      "id": "21",
+      "name": " Field Jersey Walnut ",
+      "price": 49.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT675A_DWBRN_1.jpg?v=1738795399"
+    },
+    {
+      "id": "22",
+      "name": " Field Mesh Shorts Forest ",
+      "price": 49.99,
+      "category": "apparel",
+      "type": "shorts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMZ280A_DWKHA_1.jpg?v=1738795595"
+    },
+    {
+      "id": "23",
+      "name": " Field Mesh Shorts Black ",
+      "price": 49.99,
+      "category": "apparel",
+      "type": "shorts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMZ280A_DWBLK_2.jpg?v=1738795658"
+    },
+    {
+      "id": "24",
+      "name": " Pinstripe Mesh Court Shorts ",
+      "price": 39.99,
+      "category": "apparel",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMZ279A_DWBLK_3.jpg?v=1738795342"
+    },
+    {
+      "id": "25",
+      "name": " Elite2 Pro Hi-Top Boxing Boots ",
+      "price": 129.99,
+      "category": "equipment",
+      "type": "boxing-boots",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEME062A_Elite2_Shoes_BlackGold_1.jpg?v=1704843115"
+    },
+    {
+      "id": "26",
+      "name": " Elite2 Pro Hi-Top Boxing Boots ",
+      "price": 109.99,
+      "category": "equipment",
+      "type": "boxing-boots",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEME062A_Elite2_Shoes_Red_1.jpg?v=1704843116"
+    },
+    {
+      "id": "27",
+      "name": "Target Freestanding Punch Bag ",
+      "price": 299.99,
+      "category": "equipment",
+      "type": "punch-bags",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/5e1286ea257ff165075641_w1320h1080.jpg?v=1706623332"
+    },
+    {
+      "id": "28",
+      "name": "Tim Tszyu Freestanding Punch Bag ",
+      "price": 299.99,
+      "category": "equipment",
+      "type": "punch-bags",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEQ141283_DWBLK001_1_77a4dcd4-9182-41cf-99df-3bcca22b0412.jpg?v=1704843625"
+    },
+    {
+      "id": "29",
+      "name": "Powercore Freestanding Punch Bag",
+      "price": 399.99,
+      "category": "equipment",
+      "type": "punch-bags",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/DWEQ140721_DWBLK_1_d084a358-4c6c-4191-880c-78b66478d2b6.jpg?v=1704843370"
+    },
+    {
+      "id": "30",
+      "name": " Core Everstrike Gloves ",
+      "price": 39.99,
+      "category": "gloves",
+      "type": "fitness",
+      "size": "16oz",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/141287_CORE_EVERSTRIKE_GLOVE_1.jpg?v=1704843632"
+    },
+    {
+      "id": "31",
+      "name": " Core Quick Wraps ",
+      "price": 19.99,
+      "category": "equipment",
+      "type": "hand-wraps",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/products/141422_CORE_QUICK_WRAPS_BLACK_1.jpg?v=1704843758"
+    },
+    {
+      "id": "32",
+      "name": "Coney Island Fame Short Sleeve Tee - Red ",
+      "price": 69.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT653A_DWRED160_01.jpg?v=1733872539"
+    },
+    {
+      "id": "33",
+      "name": "Coney Island Watercolour Camp Shirt ",
+      "price": 89.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMB040A_DWGRN_01.jpg?v=1733878093"
+    },
+    {
+      "id": "34",
+      "name": "Coney Island Logo Short Sleeve Graphic Tee ",
+      "price": 89.99,
+      "category": "apparel",
+      "type": "t-shirts",
+      "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT652A_DWWHT_01.jpg?v=1733878308"
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "id": "385e",
+      "items": [
+        {
+          "productId": "1",
+          "name": " Tim Tszyu Vintage Tee",
+          "price": 39.99,
+          "quantity": 1,
+          "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT670A_DWWHT_1.jpg?v=1742163874"
+        }
+      ],
+      "shippingAddress": {
+        "firstName": "ád",
+        "lastName": "ád",
+        "address": "ád",
+        "city": "ád",
+        "state": "ád",
+        "zipCode": "ád",
+        "phone": "sdsdsds"
+      },
+      "paymentMethod": "credit_card",
+      "subtotal": 39.99,
+      "shipping": 10,
+      "total": 49.99,
+      "notes": "",
+      "status": "pending",
+      "orderDate": "2025-03-28T07:28:20.279Z"
+    },
+    {
+      "id": "d1ba",
+      "items": [
+        {
+          "productId": "3",
+          "name": "Tim Tszyu Football Jersey ",
+          "price": 85,
+          "quantity": 1,
+          "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT672A_DWBLK_1.jpg?v=1742163852"
+        }
+      ],
+      "shippingAddress": {
+        "firstName": "ád",
+        "lastName": "ád",
+        "address": "sad",
+        "city": "ád",
+        "state": "ád",
+        "zipCode": "123",
+        "phone": "12314"
+      },
+      "paymentMethod": "credit_card",
+      "subtotal": 85,
+      "shipping": 10,
+      "total": 95,
+      "notes": "",
+      "status": "pending",
+      "orderDate": "2025-03-28T07:29:34.558Z"
+    },
+    {
+      "id": "0bdf",
+      "items": [
+        {
+          "productId": "2_M_Black",
+          "name": "Tim Tszyu Vintage Hoodie",
+          "price": 69.99,
+          "quantity": 1,
+          "image": "https://www.everlastboxing.com.au/cdn/shop/files/DWEMT671A_DWBLK_1.jpg?v=1742163787"
+        }
+      ],
+      "shippingAddress": {
+        "firstName": "qư",
+        "lastName": "qư",
+        "address": "q",
+        "city": "q",
+        "state": "q",
+        "zipCode": "q",
+        "phone": "qư"
+      },
+      "paymentMethod": "credit_card",
+      "subtotal": 69.99,
+      "shipping": 10,
+      "total": 79.99,
+      "notes": "",
+      "status": "pending",
+      "orderDate": "2025-03-28T07:30:24.885Z"
+    }
+  ],
+  "filterOptions": {
+    "category": [
+      "gloves",
+      "protection",
+      "equipment",
+      "apparel"
+    ],
+    "gloveSize": [
+      "8oz",
+      "10oz",
+      "12oz",
+      "14oz",
+      "16oz"
+    ],
+    "gloveType": [
+      "training gloves",
+      "sparring gloves",
+      "competition gloves",
+      "bag gloves"
+    ]
+  },
+  "sortOptions": [
+    {
+      "value": "newest",
+      "label": "Newest"
+    },
+    {
+      "value": "price_low",
+      "label": "Price: Low to High"
+    },
+    {
+      "value": "price_high",
+      "label": "Price: High to Low"
+    },
+    {
+      "value": "name_asc",
+      "label": "Name: A to Z"
+    },
+    {
+      "value": "name_desc",
+      "label": "Name: Z to A"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "BOXING BOOTS",
+      "slug": "boxing-boots",
+      "image": "https://images.unsplash.com/photo-1583689397604-923b9f249f2c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 2,
+      "name": "GLOVES",
+      "slug": "gloves",
+      "image": "https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      "id": 3,
+      "name": "PUNCH BAGS",
+      "slug": "punch-bags",
+      "image": "https://images.unsplash.com/photo-1633394782368-6e7260566004?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 4,
+      "name": "LIFTERS",
+      "slug": "lifters",
+      "image": "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 5,
+      "name": "PROTECTION",
+      "slug": "protection",
+      "image": "https://plus.unsplash.com/premium_photo-1722643209097-c2a3bc238cfa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "carouselItems": [
+    {
+      "title": "Welcome to Everlast Boxing",
+      "description": "Shop the best boxing gear for professionals and enthusiasts alike. Our high-quality equipment is designed to enhance your performance and protect you in the ring.",
+      "buttonLink": "/products",
+      "image": "https://images.unsplash.com/photo-1517438476312-10d79c077509?q=80&w=1920&auto=format&fit=crop"
+    },
+    {
+      "title": "Premium Boxing Gloves",
+      "description": "Discover our collection of professional-grade boxing gloves designed for optimal protection and performance. Made with premium materials for durability and comfort.",
+      "buttonLink": "/category/gloves",
+      "image": "https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "title": "Training Equipment",
+      "description": "Take your training to the next level with our professional training equipment. From speed bags to heavy bags, we have everything you need for a complete workout.",
+      "buttonLink": "/category/equipment",
+      "image": "https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1920&auto=format&fit=crop"
+    }
+  ]
+}

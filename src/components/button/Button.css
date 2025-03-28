@@ -1,0 +1,155 @@
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #d8d3d3;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Variants */
+.btn-prima  ry {
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #555;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Sizes */
+.btn-small {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.btn-medium {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn-large {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+/* Outline styles */
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.btn-outline:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn-outline.btn-primary {
+  border-color: #000;
+  color: #000;
+}
+
+.btn-outline.btn-secondary {
+  border-color: #555;
+  color: #555;
+}
+
+.btn-outline.btn-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-outline.btn-success {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-icon-left {
+  margin-right: 8px;
+}
+
+.btn-icon-right {
+  margin-left: 8px;
+}
+
+/* Loading state */
+.btn-loading {
+  display: inline-block;
+}
+
+/* Specific styles for app buttons */
+.btn.login-button,
+.btn.register-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+}
+
+.btn.add-to-cart-button {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn.add-to-cart-button:hover {
+  background-color: #f8f1f1;
+}
+
+.btn.add-to-wishlist-button {
+  background-color: transparent;
+  border: 1px solid #000;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn.add-to-wishlist-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn.cart-button,
+.btn.checkout-button,
+.btn.orders-button,
+.btn.order-detail-button {
+  padding: 12px 24px;
+} 
