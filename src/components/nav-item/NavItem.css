@@ -1,0 +1,142 @@
+/* NavItem styles */
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.nav-item a:hover {
+  color: #666;
+}
+
+.nav-item.dropdown .dropdown-icon {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item.dropdown.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  padding: 20px;
+}
+
+.nav-item.dropdown.active .dropdown-menu,
+.nav-item.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dropdown-column {
+  flex: 1;
+  min-width: 150px;
+  padding: 0 10px;
+}
+
+.dropdown-column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-column ul li {
+  margin-bottom: 10px;
+}
+
+.dropdown-column ul li a {
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+@media (max-width: 991px) {
+  .nav-item {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .nav-item a {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 15px;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    border-radius: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    width: 100%;
+  }
+  
+  .nav-item.dropdown.active .dropdown-menu {
+    max-height: 1000px;
+    padding: 10px 15px;
+  }
+  
+  .dropdown-content {
+    flex-direction: column;
+  }
+  
+  .dropdown-column {
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  
+  .dropdown-column h4 {
+    font-size: 13px;
+  }
+  
+  .dropdown-column ul li a {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+} 

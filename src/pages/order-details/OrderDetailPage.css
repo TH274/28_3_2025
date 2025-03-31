@@ -49,14 +49,6 @@
   margin-bottom: 30px;
 }
 
-@media (max-width: 768px) {
-  .order-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-}
-
 .order-header .order-id h2 {
   font-size: 24px;
   font-weight: 600;
@@ -116,11 +108,6 @@
   gap: 30px;
 }
 
-@media (max-width: 992px) {
-  .order-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 .order-items h3 {
   font-size: 20px;
@@ -284,5 +271,19 @@
 @media (max-width: 576px) {
   .order-action-buttons {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .order-grid {
+    grid-template-columns: 1fr;
   }
 }

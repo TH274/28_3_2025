@@ -45,11 +45,6 @@
   margin-bottom: 60px;
 }
 
-@media (max-width: 992px) {
-  .checkout-container {
-    grid-template-columns: 1fr;
-  }
-}
 
 .form-section {
   margin-bottom: 30px;
@@ -210,3 +205,9 @@
   background-color: #413d3d;
   color: #fff;
 } 
+
+@media (max-width: 992px) {
+  .checkout-container {
+    grid-template-columns: 1fr;
+  }
+}

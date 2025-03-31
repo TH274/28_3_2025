@@ -53,12 +53,6 @@
   gap: 20px;
 }
 
-@media (max-width: 576px) {
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .register-form-group {
   margin-bottom: 20px;
 }
@@ -122,3 +116,9 @@
 .register-footer a:hover {
   text-decoration: underline;
 } 
+
+@media (max-width: 576px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

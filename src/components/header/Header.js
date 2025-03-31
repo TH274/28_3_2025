@@ -1,30 +1,21 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useReducer } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { NAV_ITEMS } from './typeLink';
 import { useDispatch, useSelector } from 'react-redux';
 import { searchProducts } from '../../redux/actions/productActions';
 import { toggleCart } from '../../redux/actions/cartActions';
-import { logout } from '../../redux/actions/authActions';
-import ShoppingBag from '../shopping-bag/ShoppingBag';
+import { headerReducer, initialState } from './HeaderReducer'; 
+import { TopBanner, UserContainer, ShoppingBag, MobileMenu, Button } from '../../components';
 import logo from '../../assets/logo/Everlast_logo2.png';
 import './Header.css';
-import Button from '../button/Button';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [showUserDropdown, setShowUserDropdown] = useState(false);
+  const [state, dispatchState] = useReducer(headerReducer, initialState);
   const cartItems = useSelector(state => state.cart.items);
   const { isCartOpen } = useSelector(state => state.cart);
-  const { isAuthenticated, user } = useSelector(state => state.auth);
   const menuRef = useRef(null);
-  const userDropdownRef = useRef(null);
 
   const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
   
@@ -42,23 +33,15 @@ const Header = () => {
     };
   }, [isAuthPage]);
 
-  // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 100) {
-        setScrolled(true);
-        document.body.classList.add('scrolled-page');
-      } else {
-        setScrolled(false);
-        document.body.classList.remove('scrolled-page');
-      }
+      dispatchState({ type: 'SET_SCROLLED', payload: window.scrollY > 100 });
     };
 
     if (!isAuthPage) {
       window.addEventListener('scroll', handleScroll);
     }
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -66,18 +49,18 @@ const Header = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.trim()) {
-      dispatch(searchProducts(searchTerm));
-      navigate(`/products?q=${encodeURIComponent(searchTerm)}`);
-      setShowSearch(false);
-      setSearchTerm('');
+    if (state.searchTerm.trim()) {
+      dispatch(searchProducts(state.searchTerm));
+      navigate(`/products?q=${encodeURIComponent(state.searchTerm)}`);
+      dispatchState({ type: 'TOGGLE_SEARCH' });
+      dispatchState({ type: 'SET_SEARCH_TERM', payload: '' });
     }
   };
 
   const handleKeyPress = (e) => {
     if (e.key === 'Escape') {
-      setShowSearch(false);
-    } else if (e.key === 'Enter' && searchTerm.trim()) {
+      dispatchState({ type: 'TOGGLE_SEARCH' });
+    } else if (e.key === 'Enter' && state.searchTerm.trim()) {
       handleSearch(e);
     }
   };
@@ -93,8 +76,9 @@ const Header = () => {
 
   const toggleSearchBox = (e) => {
     e.preventDefault();
-    setShowSearch(!showSearch);
-    if (!showSearch) {
+    dispatchState({ type: 'TOGGLE_SEARCH' });
+
+    if (!state.showSearch) {
       setTimeout(() => {
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
@@ -105,16 +89,12 @@ const Header = () => {
   };
 
   const handleClickOutside = (e) => {
-    if (showSearch && !e.target.closest('.search-container')) {
-      setShowSearch(false);
+    if (state.showSearch && !e.target.closest('.search-container')) {
+      dispatchState({ type: 'TOGGLE_SEARCH' });
     }
     
-    if (mobileMenuOpen && menuRef.current && !menuRef.current.contains(e.target) && !e.target.closest('.mobile-menu-toggle')) {
-      setMobileMenuOpen(false);
-    }
-    
-    if (showUserDropdown && userDropdownRef.current && !userDropdownRef.current.contains(e.target) && !e.target.closest('.user-container')) {
-      setShowUserDropdown(false);
+    if (state.mobileMenuOpen && menuRef.current && !menuRef.current.contains(e.target) && !e.target.closest('.mobile-menu-toggle')) {
+      dispatchState({ type: 'TOGGLE_MOBILE_MENU' });
     }
   };
 
@@ -125,126 +105,58 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [showSearch, searchTerm, mobileMenuOpen, showUserDropdown]);
+  }, [state.showSearch, state.searchTerm, state.mobileMenuOpen]);
 
   useEffect(() => {
-    setMobileMenuOpen(false);
-    setActiveDropdown(null);
-    setShowUserDropdown(false);
+    dispatchState({ type: 'TOGGLE_MOBILE_MENU' });
+    dispatchState({ type: 'SET_ACTIVE_DROPDOWN', payload: null });
   }, [location.pathname]);
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-    if (!mobileMenuOpen) {
-      setActiveDropdown(null);
-      setShowUserDropdown(false);
-    }
+    dispatchState({ type: 'TOGGLE_MOBILE_MENU' });
   };
 
   const toggleDropdown = (index, e) => {
     if (window.innerWidth > 991) {
       return;
     }
-    
     e.preventDefault();
-  
-    setActiveDropdown(activeDropdown === index ? null : index);
-  };
-  
-  const toggleUserDropdown = (e) => {
-    e.preventDefault();
-    setShowUserDropdown(!showUserDropdown);
-  };
-  
-  const handleLogout = (e) => {
-    e.preventDefault();
-    dispatch(logout());
-    setShowUserDropdown(false);
-    console.log('Logged out successfully');
-  };
-
-  const renderNavItem = (item, index) => {
-    if (item.subMenu) {
-      return (
-        <li key={index} className={`nav-item dropdown ${activeDropdown === index ? 'active' : ''}`}>
-          <Link to={item.link} onClick={(e) => toggleDropdown(index, e)}>
-            {item.label}
-            <span className="dropdown-icon">
-              <i className={`fas ${activeDropdown === index ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
-            </span>
-          </Link>
-          <div className="dropdown-menu">
-            <div className="dropdown-content">
-              {item.subMenu.map((subMenu, subIndex) => (
-                <div key={subIndex} className="dropdown-column">
-                  <h4>{subMenu.title}</h4>
-                  <ul>
-                    {subMenu.links.map((link, linkIndex) => (
-                      <li key={linkIndex}>
-                        <Link to={link.link} onClick={() => setMobileMenuOpen(false)}>
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </li>
-      );
-    }
-
-    return (
-      <li key={index} className="nav-item">
-        <Link to={item.link} onClick={() => setMobileMenuOpen(false)}>
-          {item.label}
-        </Link>
-      </li>
-    );
+    dispatchState({ type: 'SET_ACTIVE_DROPDOWN', payload: index });
   };
 
   return (
     <>
-      <div className={`top-banner ${scrolled ? 'hidden' : ''} ${isAuthPage ? 'static' : ''}`}>
-        <div className="banner-container">
-          <p><i className="fas fa-tag"></i>50% off select boxing boots</p>
-          <p><i className="fas fa-truck"></i>Free standard shipping on all AU orders over $100*</p>
-          <p><i className="fas fa-undo"></i>30 day returns on all orders</p>
-        </div>
-      </div>
-      <header className={`header-container ${scrolled ? 'scrolled' : ''} ${isAuthPage ? 'static' : ''}`}>
+      <TopBanner scrolled={state.scrolled} isAuthPage={isAuthPage} />
+      <header className={`header-container ${state.scrolled ? 'scrolled' : ''} ${isAuthPage ? 'static' : ''}`}>
         <div className="header-content">
-          <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-            <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-          </div>
-          
           <div className="logo">
             <Link to="/">
               <img src={logo} alt="Everlast" />
             </Link>
           </div>
           
-          <nav className={`navigation ${mobileMenuOpen ? 'active' : ''}`} ref={menuRef}>
-            <ul className="main-menu">
-              {NAV_ITEMS.map((item, index) => renderNavItem(item, index))}
-            </ul>
-          </nav>
+          <MobileMenu 
+            isOpen={state.mobileMenuOpen}
+            menuRef={menuRef}
+            activeDropdown={state.activeDropdown}
+            toggleDropdown={toggleDropdown}
+            setMobileMenuOpen={toggleMobileMenu}
+          />
           
           <div className="header-icons">
             <div className="search-container">
               <a href="#" className="icon-link" onClick={toggleSearchBox}>
                 <i className="fas fa-search"></i>
               </a>
-              {showSearch && (
+              {state.showSearch && (
                 <div className="search-box">
                   <form onSubmit={handleSearch}>
                     <input
                       id="search-input"
                       type="text"
                       placeholder="Search"
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
+                      value={state.searchTerm}
+                      onChange={(e) => dispatchState({ type: 'SET_SEARCH_TERM', payload: e.target.value })}
                       autoFocus
                     />
                     <Button type="submit">
@@ -254,32 +166,8 @@ const Header = () => {
                 </div>
               )}
             </div>
-            
-            <div className="user-container">
-              {isAuthenticated ? (
-                <>
-                  <a href="#" className="icon-link" onClick={toggleUserDropdown}>
-                    <i className="fas fa-user"></i>
-                  </a>
-                  {showUserDropdown && (
-                    <div className="user-dropdown" ref={userDropdownRef}>
-                      <div className="user-welcome">
-                        <p>Welcome, {user?.username || 'User'}</p>
-                      </div>
-                      <ul>
-                        <li><Link to="/orders">My Orders</Link></li>
-                        <li><a href="#" onClick={handleLogout}>Logout</a></li>
-                      </ul>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link to="/login" className="icon-link">
-                  <i className="fas fa-user"></i>
-                </Link>
-              )}
-            </div>
-            
+    
+            <UserContainer />
             <Link to="/wishlist" className="icon-link">
               <i className="fas fa-bookmark"></i>
             </Link>

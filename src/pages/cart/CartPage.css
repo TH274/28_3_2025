@@ -169,13 +169,6 @@
   margin-bottom: 60px;
 }
 
-@media (max-width: 768px) {
-  .cart-actions {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
 .cart-button {
   background-color: #d82027;
   color: #fff;
@@ -236,4 +229,11 @@
 .empty-cart p {
   color: #666;
   margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .cart-actions {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

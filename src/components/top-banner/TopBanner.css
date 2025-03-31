@@ -1,0 +1,39 @@
+.top-banner {
+  background-color: #000;
+  color: white;
+  padding: 8px 0;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.top-banner.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.top-banner .banner-container {
+  max-width: 2000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top-banner p {
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+
+.top-banner p i {
+  margin-right: 8px;
+}

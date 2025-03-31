@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import Button from '../button/Button';
-import { footerLinks, socialLinks } from './footerLink';
+import { footerLinks, socialLinks } from '../../constants/FooterLink';
 
 const Footer = () => {
   return (
