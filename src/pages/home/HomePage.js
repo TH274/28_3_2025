@@ -49,7 +49,6 @@ const HomePage = () => {
   }
 
   const newProducts = products.slice(0, 10);
-  
   const bestSellers = products.slice(10, 20);
 
   return (

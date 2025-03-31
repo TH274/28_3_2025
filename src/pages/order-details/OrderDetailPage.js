@@ -57,11 +57,9 @@ const OrderDetailPage = () => {
   };
 
   const handleReorder = () => {
-    // Implement reorder logic
   };
 
   const handleCancelOrder = () => {
-    // Implement cancel order logic
   };
 
   return (
