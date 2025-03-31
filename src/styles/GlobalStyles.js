@@ -20,6 +20,67 @@ const GlobalStyles = createGlobalStyle`
     background-color: #f8f8f8;
   }
   
+  div {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  div.container-fluid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  div.content-section {
+    padding: 30px 0;
+    margin-bottom: 30px;
+  }
+  
+  div.content-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  div.flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  div.flex-column {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  
+  div.flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  /* Grid layouts */
+  div.grid-container {
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* Media container for img */
+  div.media-container {
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  div.media-container img {
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  div.media-container:hover img {
+    transform: scale(1.05);
+  }
+  
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;

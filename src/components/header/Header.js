@@ -1,16 +1,14 @@
 import React, { useEffect, useRef, useReducer } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchProducts } from '../../redux/actions/productActions';
 import { toggleCart } from '../../redux/actions/cartActions';
-import { headerReducer, initialState } from './HeaderReducer'; 
-import { TopBanner, UserContainer, ShoppingBag, MobileMenu, Button } from '../../components';
+import { headerReducer, initialState } from './headerReducer'; 
+import { TopBanner, UserContainer, ShoppingBag, MobileMenu, HeaderSearch } from '../../components';
 import logo from '../../assets/logo/Everlast_logo2.png';
 import './Header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const location = useLocation();
   const [state, dispatchState] = useReducer(headerReducer, initialState);
   const cartItems = useSelector(state => state.cart.items);
@@ -47,21 +45,10 @@ const Header = () => {
     };
   }, [isAuthPage]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (state.searchTerm.trim()) {
-      dispatch(searchProducts(state.searchTerm));
-      navigate(`/products?q=${encodeURIComponent(state.searchTerm)}`);
-      dispatchState({ type: 'TOGGLE_SEARCH' });
-      dispatchState({ type: 'SET_SEARCH_TERM', payload: '' });
-    }
-  };
-
   const handleKeyPress = (e) => {
     if (e.key === 'Escape') {
       dispatchState({ type: 'TOGGLE_SEARCH' });
     } else if (e.key === 'Enter' && state.searchTerm.trim()) {
-      handleSearch(e);
     }
   };
 
@@ -74,8 +61,7 @@ const Header = () => {
     dispatch(toggleCart(false));
   };
 
-  const toggleSearchBox = (e) => {
-    e.preventDefault();
+  const toggleSearchBox = () => {
     dispatchState({ type: 'TOGGLE_SEARCH' });
 
     if (!state.showSearch) {
@@ -128,7 +114,7 @@ const Header = () => {
     <>
       <TopBanner scrolled={state.scrolled} isAuthPage={isAuthPage} />
       <header className={`header-container ${state.scrolled ? 'scrolled' : ''} ${isAuthPage ? 'static' : ''}`}>
-        <div className="header-content">
+        <div className="header-content flex-between container-fluid">
           <div className="logo">
             <Link to="/">
               <img src={logo} alt="Everlast" />
@@ -143,29 +129,13 @@ const Header = () => {
             setMobileMenuOpen={toggleMobileMenu}
           />
           
-          <div className="header-icons">
-            <div className="search-container">
-              <a href="#" className="icon-link" onClick={toggleSearchBox}>
-                <i className="fas fa-search"></i>
-              </a>
-              {state.showSearch && (
-                <div className="search-box">
-                  <form onSubmit={handleSearch}>
-                    <input
-                      id="search-input"
-                      type="text"
-                      placeholder="Search"
-                      value={state.searchTerm}
-                      onChange={(e) => dispatchState({ type: 'SET_SEARCH_TERM', payload: e.target.value })}
-                      autoFocus
-                    />
-                    <Button type="submit">
-                      <i className="fas fa-search"></i>
-                    </Button>
-                  </form>
-                </div>
-              )}
-            </div>
+          <div className="header-icons flex-row">
+            <HeaderSearch 
+              showSearch={state.showSearch}
+              searchTerm={state.searchTerm}
+              toggleSearch={toggleSearchBox}
+              updateSearchTerm={(value) => dispatchState({ type: 'SET_SEARCH_TERM', payload: value })}
+            />
     
             <UserContainer />
             <Link to="/wishlist" className="icon-link">

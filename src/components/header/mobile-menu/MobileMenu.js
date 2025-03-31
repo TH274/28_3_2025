@@ -1,6 +1,6 @@
 import React from 'react';
-import { NAV_ITEMS } from '../../constants/TypeLink';
-import { NavItem } from '../../components';
+import { NAV_ITEMS } from '../../../constants/link_types';
+import { NavItem } from '../../../components';
 import './MobileMenu.css';
 
 const MobileMenu = ({ 

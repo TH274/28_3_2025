@@ -30,11 +30,11 @@ const ProductCard = ({ product }) => {
   };
   
   return (
-    <div className="product-card">
-      <div className="product-image">
+    <div className="product-card content-box">
+      <div className="media-container">
         <img src={product.image} alt={product.name} />
         <div className="actions">
-          <div className="size-options">
+          <div className="size-options flex-row flex-wrap">
             {['S', 'M', 'L', 'XL', '2XL', '3XL'].map((size) => (
               <Button 
                 key={size} 
@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
       
-      <div className="product-info">
+      <div className="flex-column">
         <h3><Link to={`/product/${product.id}`}>{product.name}</Link></h3>
         <div className="price">${product.price.toFixed(2)}</div>
       </div>

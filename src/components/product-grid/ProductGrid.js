@@ -20,7 +20,7 @@ const ProductGrid = ({ products, loading, error }) => {
   }
 
   return (
-    <div className="products-grid">
+    <div className="products-grid grid-container">
       {products.map(product => (
         <ProductCard key={product.id} product={product} />
       ))}

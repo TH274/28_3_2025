@@ -1,0 +1,99 @@
+.search-container {
+  position: relative;
+}
+
+.search-box {
+  position: absolute;
+  top: 100%;
+  right: -15px;
+  margin-top: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 4px;
+  width: 300px;
+  overflow: hidden;
+  z-index: 200;
+  transition: all 0.3s ease;
+}
+
+.search-box form {
+  position: relative;
+  background: #f7f7f7;
+  padding: 5px 15px;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 10px 8px 25px;
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 40px;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+}
+
+.search-box button:hover {
+  color: #000;
+}
+
+.search-box .close-search {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #777;
+}
+
+.search-box .close-search:hover {
+  color: #ff3a3a;
+}
+
+.icon-link {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icon-link:hover {
+  color: #000;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .search-box {
+    width: 260px;
+  }
+  
+  .icon-link {
+    font-size: 16px;
+  }
+} 

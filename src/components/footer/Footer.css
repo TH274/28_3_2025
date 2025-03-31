@@ -6,7 +6,6 @@
 }
 
 .footer-content {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
@@ -43,13 +42,7 @@
   text-decoration: underline;
 }
 
-.newsletter-column {
-  display: flex;
-  flex-direction: column;
-}
-
 .newsletter-form {
-  display: flex;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -84,7 +77,6 @@
 
 /* Social icons */
 .social-links {
-  display: flex;
   gap: 15px;
 }
 
