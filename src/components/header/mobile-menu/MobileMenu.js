@@ -1,5 +1,5 @@
 import React from 'react';
-import { NAV_ITEMS } from '../../../constants/link_types';
+import { NAV_ITEMS } from '../../../constants/category_links';
 import { NavItem } from '../../../components';
 import './MobileMenu.css';
 

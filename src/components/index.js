@@ -14,7 +14,7 @@ export { default as PrivateRoute } from './private-route/PrivateRoute';
 export { default as ProductCard } from './product-card/ProductCard';
 export { default as ProductGrid } from './product-grid/ProductGrid';
 export { default as ProductScroll } from './product-scroll/ProductScroll';
+export { default as Search } from './header/search/Search';
 export { default as ShoppingBag } from './shopping-bag/ShoppingBag';
 export { default as TopBanner } from './header/top-banner/TopBanner';
 export { default as UserContainer } from './header/user-container/UserContainer';
-export { default as Search } from './header/search/Search';

@@ -1,11 +1,35 @@
 import React, { useEffect, useRef, useReducer } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleCart } from '../../redux/actions/cartActions';
-import { headerReducer, initialState } from './headerReducer'; 
 import { TopBanner, UserContainer, ShoppingBag, MobileMenu, HeaderSearch } from '../../components';
 import logo from '../../assets/logo/Everlast_logo2.png';
 import './Header.css';
+
+const initialState = {
+  searchTerm: '',
+  showSearch: false,
+  scrolled: false,
+  mobileMenuOpen: false,
+  activeDropdown: null,
+};
+
+const headerReducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_SEARCH_TERM':
+      return { ...state, searchTerm: action.payload };
+    case 'TOGGLE_SEARCH':
+      return { ...state, showSearch: !state.showSearch };
+    case 'SET_SCROLLED':
+      return { ...state, scrolled: action.payload };
+    case 'TOGGLE_MOBILE_MENU':
+      return { ...state, mobileMenuOpen: !state.mobileMenuOpen, activeDropdown: null };
+    case 'SET_ACTIVE_DROPDOWN':
+      return { ...state, activeDropdown: state.activeDropdown === action.payload ? null : action.payload };
+    default:
+      return state;
+  }
+};
 
 const Header = () => {
   const dispatch = useDispatch();
