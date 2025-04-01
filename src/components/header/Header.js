@@ -118,7 +118,7 @@ const Header = () => {
   }, [state.showSearch, state.searchTerm, state.mobileMenuOpen]);
 
   useEffect(() => {
-    dispatchState({ type: 'TOGGLE_MOBILE_MENU' });
+    dispatchState({ type: 'TOGGLE_MOBILE_MENU', payload: false });
     dispatchState({ type: 'SET_ACTIVE_DROPDOWN', payload: null });
   }, [location.pathname]);
 

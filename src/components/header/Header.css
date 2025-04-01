@@ -49,6 +49,13 @@ body.scrolled-page {
   margin: 0 auto;
   padding: 40px 25px;
   height: 60px;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
@@ -119,12 +126,26 @@ body.scrolled-page {
     padding: 15px;
     height: auto;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
   }
 
   .logo img {
-    justify-content: center;
     height: 40px;
+  }
+
+  .header-icons {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
   }
 
   .navigation {
